@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Your Organization</title>
+  <meta name="description" content="Your Organization — short mission tagline." />
+  <style>
+    :root{
+      --bg: #0f172a;           /* slate-900 */
+      --panel: #111827;       /* gray-900 */
+      --text: #e5e7eb;        /* gray-200 */
+      --muted: #94a3b8;       /* slate-400 */
+      --brand: #6366f1;       /* indigo-500 */
+      --brand-2:#22d3ee;      /* cyan-400 */
+      --maxw: 1100px;
+      --radius: 14px;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;background:linear-gradient(120deg,var(--bg),#0b1224 60%);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;line-height:1.6}
+    a{color:var(--brand);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .wrap{max-width:var(--maxw);margin:auto;padding:0 20px}
+    /* Header */
+    header{position:sticky;top:0;z-index:50;background:rgba(15,23,42,.75);backdrop-filter:blur(10px);border-bottom:1px solid rgba(148,163,184,.15)}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+    .brand{display:flex;gap:10px;align-items:center;font-weight:700}
+    .logo{inline-size:36px;block-size:36px;border-radius:10px;background:
+      radial-gradient(120px 70px at -20% 0%, var(--brand-2), transparent 60%),
+      radial-gradient(120px 70px at 120% 100%, var(--brand), transparent 60%),
+      #0a0f1f;border:1px solid rgba(148,163,184,.25)}
+    nav ul{display:flex;gap:22px;list-style:none;margin:0;padding:0}
+    nav a{color:var(--text);opacity:.9}
+    .menu-btn{display:none}
+    /* Hero */
+    .hero{padding:80px 0 50px;display:grid;gap:28px;align-items:center}
+    .hero h1{font-size:clamp(28px,5vw,48px);line-height:1.15;margin:0}
+    .tag{display:inline-block;padding:6px 10px;border:1px solid rgba(148,163,184,.25);border-radius:999px;color:var(--muted);font-size:14px}
+    .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:10px}
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 18px;border-radius:12px;border:1px solid rgba(148,163,184,.25);background:#0b1224;color:var(--text);box-shadow:var(--shadow)}
+    .btn.primary{background:linear-gradient(135deg,var(--brand),var(--brand-2));border-color:transparent}
+    .hero-card{margin-top:6px;border:1px solid rgba(148,163,184,.15);border-radius:var(--radius);padding:18px;background:linear-gradient(180deg,rgba(255,255,255,.02),rgba(255,255,255,.01));box-shadow:var(--shadow)}
+    /* Sections */
+    section{padding:50px 0}
+    .section-title{font-size:clamp(22px,4vw,32px);margin:0 0 8px}
+    .muted{color:var(--muted)}
+    .grid{display:grid;gap:18px}
+    .cards{grid-template-columns:repeat(3,minmax(0,1fr))}
+    .card{border:1px solid rgba(148,163,184,.15);border-radius:var(--radius);padding:18px;background:rgba(255,255,255,.02)}
+    .card h3{margin:0 0 6px;font-size:18px}
+    /* About */
+    .about{display:grid;grid-template-columns:1.1fr .9fr;gap:24px}
+    .about .panel{border:1px solid rgba(148,163,184,.15);border-radius:var(--radius);padding:18px;background:rgba(255,255,255,.02)}
+    /* Contact */
+    form{display:grid;gap:12px}
+    input,textarea{width:100%;padding:12px 14px;border-radius:10px;border:1px solid rgba(148,163,184,.25);background:#0b1224;color:var(--text)}
+    textarea{min-height:120px;resize:vertical}
+    .small{font-size:13px;color:var(--muted)}
+    /* Footer */
+    footer{padding:24px 0;border-top:1px solid rgba(148,163,184,.15);color:var(--muted);font-size:14px}
+    /* Responsive */
+    @media (max-width: 880px){
+      .cards{grid-template-columns:1fr 1fr}
+      .about{grid-template-columns:1fr}
+    }
+    @media (max-width: 640px){
+      nav ul{display:none}
+      .menu-btn{display:inline-flex;gap:8px;align-items:center;border:1px solid rgba(148,163,184,.25);padding:8px 10px;border-radius:10px;background:#0b1224;color:var(--text)}
+      .cards{grid-template-columns:1fr}
+    }
+    /* Utilities */
+    .pill{display:inline-flex;gap:8px;align-items:center;padding:6px 10px;border-radius:999px;background:rgba(99,102,241,.12);border:1px solid rgba(99,102,241,.35)}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap nav">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <span>Your Organization</span>
+      </div>
+      <button class="menu-btn" aria-expanded="false" aria-controls="menu">Menu ▾</button>
+      <nav id="menu" aria-label="Main">
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#programs">Programs</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a class="pill" href="#donate">Donate</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap">
+        <span class="tag">Non‑profit • Community • Impact</span>
+        <h1>We help <em>people</em> thrive through programs, partnerships, and purpose.</h1>
+        <p class="muted">A short mission statement goes here. Keep it crisp and action‑oriented so visitors understand what you do in one glance.</p>
+        <div class="cta">
+          <a class="btn primary" href="#programs">Explore Programs →</a>
+          <a class="btn" href="#contact">Get Involved</a>
+        </div>
+        <div class="hero-card">
+          <strong>Latest highlight:</strong> We served 1,200+ families last year with after‑school mentoring and food security initiatives.
+        </div>
+      </div>
+    </section>
+
+    <section id="programs">
+      <div class="wrap">
+        <h2 class="section-title">Programs</h2>
+        <p class="muted">Three example tiles—replace with your own.</p>
+        <div class="grid cards">
+          <article class="card">
+            <h3>After‑School Mentoring</h3>
+            <p>Weekly tutoring and mentorship for grades 3–8 with volunteer coaches and educators.</p>
+          </article>
+          <article class="card">
+            <h3>Food Pantry</h3>
+            <p>Monthly distributions in partnership with local farms and grocers to reduce food insecurity.</p>
+          </article>
+          <article class="card">
+            <h3>Career Workshops</h3>
+            <p>Resume clinics, interview prep, and networking events for job seekers and students.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="wrap about">
+        <div class="panel">
+          <h2 class="section-title">About Us</h2>
+          <p>Founded in 2012, our organization partners with schools, city agencies, and neighbors to create equitable opportunity.</p>
+          <ul>
+            <li>501(c)(3) • EIN: 00‑0000000</li>
+            <li>Board‑led, community‑driven</li>
+            <li>Transparent reporting & open data</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h2 class="section-title" id="donate">Support the Mission</h2>
+          <p class="muted">Every dollar stays local. Consider a one‑time or monthly gift.</p>
+          <a class="btn primary" href="#" aria-label="Donate now">Donate Now</a>
+          <p class="small">Replace the link above with your donation platform (e.g., Stripe/PayPal/Every.org).</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="wrap">
+        <h2 class="section-title">Contact</h2>
+        <p class="muted">Have a question or want to volunteer? Send us a note.</p>
+        <form onsubmit="event.preventDefault(); alert('Thanks — this demo form does not send yet. Connect it to Netlify Forms or your backend.');">
+          <label>
+            <span class="small">Your name</span>
+            <input required name="name" autocomplete="name" />
+          </label>
+          <label>
+            <span class="small">Email</span>
+            <input required type="email" name="email" autocomplete="email" />
+          </label>
+          <label>
+            <span class="small">Message</span>
+            <textarea required name="message"></textarea>
+          </label>
+          <button class="btn primary" type="submit">Send Message</button>
+          <p class="small">Tip: On Netlify, add <code>name="contact"</code> to the form and <code>netlify</code> attribute to enable serverless form handling.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      © <span id="y"></span> Your Organization • <a href="#">Privacy</a> • <a href="#">Accessibility</a>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu toggle (no framework)
+    const btn = document.querySelector('.menu-btn');
+    const menu = document.getElementById('menu');
+    if (btn){
+      btn.addEventListener('click', () => {
+        const open = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', String(!open));
+        menu.style.display = open ? 'none' : 'block';
+      });
+    }
+    // Year stamp
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
